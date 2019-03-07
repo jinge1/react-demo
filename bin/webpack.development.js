@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require('webpack-copy-plugin')
 const IP = getIp()
 
 const {
-  devServerPort,
+  devServerPort = 8888,
   distPath,
   mockPath,
   mockType,
@@ -24,8 +24,6 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const port = devServerPort || 8888
-
 let plugins = [
   new webpack.DefinePlugin({
     'process.env.ISDEV': JSON.stringify(true),
@@ -33,7 +31,7 @@ let plugins = [
       distPath,
       mockType,
       mockPort,
-      devServerPort: port,
+      devServerPort,
       ...other
     })
   })
@@ -65,6 +63,7 @@ const currentConfig = {
   resolve: {
     // 配置别名
     alias: {
+      'react-dom': '@hot-loader/react-dom',
       'devApiInfo': resolve('code/config/devApiInfo'),
       'toMock': resolve(toMock),
       'mockPath': mockPath
@@ -76,7 +75,7 @@ const currentConfig = {
     contentBase: distPath,
     // 获取本地ip地址，默认值  0.0.0.0
     host: IP,
-    port,
+    port: devServerPort,
     publicPath: '/',
     inline: true,
     noInfo: true,

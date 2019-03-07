@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Switch,
-  Link,
   Route
 } from 'react-router-dom'
 import Sub1 from './Sub1'

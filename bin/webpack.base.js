@@ -15,6 +15,7 @@ module.exports = {
   mode: 'development',
   entry: {
     polyfills: ['isomorphic-fetch', 'react', 'react-dom', 'react-router', 'react-router-dom'],
+    hot: 'react-hot-loader/patch',
     main: `${projectPath}/index.js`
   },
   resolve: {
