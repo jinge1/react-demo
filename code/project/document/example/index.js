@@ -1,16 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {
+  render
+} from 'react-dom'
 import {
   Provider
 } from 'react-redux'
-import App from './components/App'
 import {
   BrowserRouter
 } from 'react-router-dom'
 
-console.log('Provider: ', Provider)
+import App from './components/App'
 
-ReactDOM.render(
+import store from './redux'
+
+
+render(
   <Provider store={store}>
     <BrowserRouter>
       <App/>
@@ -20,7 +24,5 @@ ReactDOM.render(
 );
 
 if (module.hot) {
-
   module.hot.accept()
-
 }

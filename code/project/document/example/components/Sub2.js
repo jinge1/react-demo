@@ -1,4 +1,16 @@
 import React from 'react'
-export default function Sub2(){
-  return <h3>Sub2</h3>
+import {
+  connect
+} from 'react-redux'
+import {increase} from '../redux/actions'
+
+function Sub2(props) {
+  return (
+  <div>
+      <h3> Sub2 </h3>
+      <button onClick={()=>{props.dispatch(increase(10))}}>add10</button>
+  </div>
+  )
 }
+
+export default connect(state=> {return {list: state.lists}})(Sub2)

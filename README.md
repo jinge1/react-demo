@@ -1,4 +1,15 @@
 
+https://github.com/luozhihao/react-redux-demo/blob/master/src/store/configureStore.js
+
+https://www.redux.org.cn/docs/advanced/AsyncActions.html
+
+
+https://www.npmjs.com/package/redux-react-hook
+
+
+https://npm.taobao.org/package/react-hooks-redux
+
+
 if you want to use jest you must do this:
 npm install babel-core@^7.0.0-bridge.0 --save-dev
 
