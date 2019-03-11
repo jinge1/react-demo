@@ -11,7 +11,8 @@
     "test": true
   },
   "plugins": [
-    "html"
+    "html",
+    "react-hooks"
   ],
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -30,6 +31,7 @@
     "no-unused-vars": 1,
     "linebreak-style": 0,
     "no-empty": 1,
+    "react-hooks/rules-of-hooks": "error",
     "quotes": [
       1,
       "single"
