@@ -19,17 +19,20 @@ import {setLoading, setTip} from '../redux/actions'
 
 function App(props){
   const store = useContext(Context)
-  const {$state, dispatch} = store
+  const {$state, dispatch, $utils, $post} = store
   const [data, setData] = useState({})
 
+  // console.log($utils.isMobile('1588888'))
+  // console.log($utils.isMobile('15889999999'))
+
+  // $post('some/api', {body: 'nothing'}).then(res=>{
+  //   console.log('res: ', res)
+  // })
+
   // useEffect(()=>{
-  //   console.log('--------->>>')
-  //   dispatch(dis=>{
-  //     console.log(dis)
+  //   $post('some/api', {body: 'nothing'}).then(res=>{
+  //     console.log('res: ', res)
   //   })
-  //   setTimeout(()=>{
-  //     dispatch(setTip('321'))
-  //   }, 2000)
   // }, [])
 
   return (
@@ -42,7 +45,9 @@ function App(props){
       <Tip msg={$state.tipMsg}></Tip>
       <div>
         <button onClick={()=> dispatch(setLoading(true))}>loading</button>
-        <button onClick={()=> dispatch(setTip(Date.now()))}>tip</button>
+        <button onClick={()=> dispatch(setTip(Date.now(), ()=>{
+          console.log('ok???')
+        }))}>tip</button>
       </div>
       <Switch>
         <Route path='/home' component={Home}/>
