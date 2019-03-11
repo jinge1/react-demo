@@ -5,7 +5,14 @@ export const Context = createContext();
 
 export default function Provider(props){
   const {state: initialState, reducer} = props
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, originDispatch] = useReducer(reducer, initialState);
+  const dispatch = action => {
+    if(typeof action === 'function'){
+      return action(originDispatch)
+    }
+    return originDispatch(action)
+  }
+  
   return (
       <Context.Provider value={{
         $state: state,

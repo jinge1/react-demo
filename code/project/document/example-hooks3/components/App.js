@@ -21,7 +21,16 @@ function App(props){
   const store = useContext(Context)
   const {$state, dispatch} = store
   const [data, setData] = useState({})
-  console.log('store: ', store)
+
+  // useEffect(()=>{
+  //   console.log('--------->>>')
+  //   dispatch(dis=>{
+  //     console.log(dis)
+  //   })
+  //   setTimeout(()=>{
+  //     dispatch(setTip('321'))
+  //   }, 2000)
+  // }, [])
 
   return (
     <div>
@@ -31,7 +40,10 @@ function App(props){
       </ul>
       <Loading num={$state.loadingNum}></Loading>
       <Tip msg={$state.tipMsg}></Tip>
-      <div><button onClick={dispatch(setLoading(true))}>loading</button><button>tip</button></div>
+      <div>
+        <button onClick={()=> dispatch(setLoading(true))}>loading</button>
+        <button onClick={()=> dispatch(setTip(Date.now()))}>tip</button>
+      </div>
       <Switch>
         <Route path='/home' component={Home}/>
         <Route path='/about' component={About}/>

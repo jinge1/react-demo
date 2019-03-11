@@ -11,8 +11,12 @@ export function setLoading(status = true){
 } 
 
 export function setTip(msg = ''){
-  return {
-    type: SET_TIP,
-    msg
+  return dispatch =>{
+    setTimeout(()=>{
+      return dispatch({
+        type: SET_TIP,
+        msg
+      })
+    }, 2000)  
   }
 } 
