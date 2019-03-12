@@ -13,12 +13,6 @@ export default function Provider(props){
     }
     return originDispatch(action)
   }
-
-  
-
-  useEffect(()=>{
-    dispatch(setTip(1))
-  }, [])
   
   return (
       <Context.Provider value={{

@@ -22,18 +22,24 @@ function App(props){
   const {$state, dispatch, $utils, $post} = store
   const [data, setData] = useState({})
 
-  // console.log($utils.isMobile('1588888'))
-  // console.log($utils.isMobile('15889999999'))
+  console.log('store: ')
 
-  // $post('some/api', {body: 'nothing'}).then(res=>{
-  //   console.log('res: ', res)
-  // })
+  useEffect(()=>{
+    console.log('post: ')
+    $post('some/api', {body: 'nothing'}).then(res=>{
+      console.log('res: ', res)
+    }).catch(reson=>{
+      console.log('reson: ', reson)
+    })
+  }, [])
 
-  // useEffect(()=>{
-  //   $post('some/api', {body: 'nothing'}).then(res=>{
-  //     console.log('res: ', res)
-  //   })
-  // }, [])
+  const toPost = ()=>{
+    $post('some/api', {body: 'nothing'}).then(res=>{
+      console.log('toPost res: ', res)
+    }).catch(reson=>{
+      console.log('toPost reson: ', reson)
+    })
+  }
 
   return (
     <div>
@@ -48,6 +54,7 @@ function App(props){
         <button onClick={()=> dispatch(setTip(Date.now(), ()=>{
           console.log('ok???')
         }))}>tip</button>
+        <button onClick={()=> toPost('hello')}>toPost</button>
       </div>
       <Switch>
         <Route path='/home' component={Home}/>
