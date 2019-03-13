@@ -1,0 +1,9 @@
+.tipMsg {
+  background: rgba(0, 0, 0, .6);
+  border-radius: .08rem;
+  padding: .23rem .3rem;
+  text-align: center;
+  max-width: 60%;
+  font-size: .3rem;
+  color: #FFFFFF;
+}

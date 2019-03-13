@@ -1,6 +1,6 @@
 
 import React, {createContext, useReducer, useEffect} from 'react'
-import {setLoading, setTip} from '../redux/actions'
+import {setLoading, setTip} from 'comm/store/actions'
 
 export const Context = createContext();
 

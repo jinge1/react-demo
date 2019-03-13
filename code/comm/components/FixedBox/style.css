@@ -1,0 +1,21 @@
+.fixedBox {
+  position: fixed;
+  z-index: 18000;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.top {
+  top: 0;
+}
+
+.center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+}

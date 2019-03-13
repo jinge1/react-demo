@@ -11,6 +11,14 @@ const {
   configPath
 } = require('./getProjectInfo')
 
+const cssLoader = {
+  loader: 'css-loader',
+  options: {
+    modules: true,
+    localIdentName: '[hash:base64:6]'
+  }
+}
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -31,13 +39,13 @@ module.exports = {
       use: ['babel-loader']
     }, {
       test: /\.(css|postcss)$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader']
+      use: ['style-loader', cssLoader, 'postcss-loader']
     }, {
       test: /\.(scss|sass)$/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
+      use: ['style-loader', cssLoader, 'sass-loader']
     }, {
       test: /\.(less)$/,
-      use: ['style-loader', 'css-loader', 'less-loader']
+      use: ['style-loader', cssLoader, 'less-loader']
     }, {
       // 图片文件处理
       test: /\.(png|jpg|jpeg|gif|svg|svgz)(\?.+)?$/,

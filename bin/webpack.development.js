@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require('webpack-copy-plugin')
 const IP = getIp()
 
 const {
-  devServerPort = 8888,
+  devServerPort = 6888,
   distPath,
   mockPath,
   mockType,

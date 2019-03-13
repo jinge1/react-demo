@@ -7,27 +7,6 @@ import createApp from 'comm/mixin/createApp'
 
 import './public/public'
 
-// import Vconsole from 'vconsole'
-// new Vconsole()
-
-// const filters = {
-//   myFilter: (value, other) => {
-//     return `${value}-${other}`
-//   }
-// }
-//
-// const methods = {
-//   $who: (value) => {
-//     console.log(`${value}-wto`)
-//   }
-// }
-//
-// const vueExtends = {
-//   $who3: (value) => {
-//     console.log(`${value}-wto`)
-//   }
-// }
-
 createApp({
   // App,
   conf,
