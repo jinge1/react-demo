@@ -1,0 +1,48 @@
+body {
+  font-size: .24rem;
+}
+
+.demo {
+  text-align: center;
+  padding: .5rem .3rem;
+
+  h1 {
+    font-size: .36rem;
+    line-height: 2em;
+    margin-bottom: .5rem;
+  }
+
+  .buttons-list {
+    width: 90%;
+    margin: auto;
+    li {
+      background: orange;
+      line-height: 1rem;
+      border-radius: .5rem;
+      text-align: center;
+      color: #fff;
+      margin-bottom: .5rem;
+      font-size: .28rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-child(even) {
+        background: green;
+      }
+    }
+  }
+}
+
+.small-button {
+  display: block;
+  height: 2em;
+  font-size:.24rem;
+  color:#fff;
+  line-height: .3rem;
+  text-align: center;
+  border-radius: .6em;
+  background: #FF00FF;
+  padding: 0 .2rem;
+  margin-right:.2rem;
+}
