@@ -13,26 +13,28 @@ import 'comm/public/reset'
 
 
 export default ({
-  conf = {},
-  router,
-  // modules = {},
-  // filters = {},
-  // methods = {},
-  // vueExtends = {},
-  el = '#root'
-})=>{
+    conf = {},
+    router,
+    // modules = {},
+    // filters = {},
+    // methods = {},
+    // vueExtends = {},
+    el = '#root'
+  })=>{
 
-const ele = typeof el === 'object' ? el : document.querySelector(el)
+  const ele = typeof el === 'object' ? el : document.querySelector(el)
 
-render(
-  <Provider state={state} reducer={reducer}>
-    <BrowserRouter>
-      <App router={router}/>
-    </BrowserRouter>
-  </Provider>,
-  ele
-)
+  render(
+    <Provider state={state} reducer={reducer}>
+      <BrowserRouter>
+        <App router={router}/>
+      </BrowserRouter>
+    </Provider>,
+    ele
+  )
 
-
-
+  if (module.hot) {
+    module.hot.accept()
+  }
 }
+
