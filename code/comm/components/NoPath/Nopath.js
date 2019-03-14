@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-export default function Nopath(){
+export default function NoPath(){
   return (
-    <div class={noPath}><h1>访问的路径不存在！</h1></div>
+    <div><h1>访问的路径不存在！</h1></div>
   )
 }
