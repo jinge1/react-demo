@@ -1,7 +1,8 @@
 export default [{
-//   path: '/',
-//   redirect: '/main'
-// }, {
+  path: '/',
+  redirect: '/main',
+  exact: true
+}, {
   path: '/main',
   component: () => import('../pages/Main'),
   meta: {
