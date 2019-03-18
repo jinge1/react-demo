@@ -7,6 +7,7 @@ export const Context = createContext();
 export default function Provider(props){
   const {state: initialState, reducer} = props
   const [state, originDispatch] = useReducer(reducer, initialState);
+
   const dispatch = action => {
     if(typeof action === 'function'){
       return action(originDispatch)

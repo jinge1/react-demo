@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import Provider from 'comm/components/Provider'
 import App from 'comm/components/App'
 
@@ -26,9 +26,9 @@ export default ({
 
   render(
     <Provider state={state} reducer={reducer}>
-      <BrowserRouter>
+      <HashRouter>
         <App router={router}/>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>,
     ele
   )

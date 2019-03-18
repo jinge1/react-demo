@@ -5,7 +5,7 @@ import React, {
   useEffect
 } from 'react'
 
-import asyncComponent from '../hooks/asyncComponent'
+// import asyncComponent from '../hooks/asyncComponent'
 
 export default function test(imp){
   const [count, setCount] = useState(null)

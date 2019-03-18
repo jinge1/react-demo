@@ -1,10 +1,17 @@
+
+import main from '../pages/Main'
+import native from '../pages/Native/index'
+import detail from '../pages/Native/Detail/Detail'
+import edit from '../pages/Native/Edit/Edit'
+
 export default [{
   path: '/',
   redirect: '/main',
   exact: true
 }, {
   path: '/main',
-  component: () => import('../pages/Main'),
+  // component: () => import('../pages/Main'),
+  component: main,
   meta: {
     // isLogin: true,
     title: 'demo-main',
@@ -12,14 +19,14 @@ export default [{
   }
 }, {
   path: '/native',
-  component: () => import('../pages/Native/index'),
+  component: native,
   children: [{
       path: 'detail/:id',
-      component: () => import('../pages/Native/Detail/Detail'),
+      component: detail,
     },
     {
       path: 'edit',
-      component: () => import('../pages/Native/Edit/Edit'),
+      component: edit,
     }
   ]
 }, 

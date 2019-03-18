@@ -14,18 +14,14 @@ import React, {
 // }
 
 
-export default function asyncComponent(importComponentFn){
-  const [count, setCount] = useState(null)
+const asyncComponent = (importComponentFn) =>{
+  const [result, setResult] = useState(null)
   useEffect(() => {
-    // let c = asyncComponent()
-    // import('./NoPath/NoPath').then(res=>{
-    //   setCount(res.default)
-    // })
-    // setCount(c)
     importComponentFn().then(res=>{
-      setCount(res.default)
+      setResult(res)
     })
-    // console.log(imp)
   }, [])
-  return count
+  return result ? result.default : result
 }
+
+export default asyncComponent;
