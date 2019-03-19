@@ -1,8 +1,8 @@
 
-import main from '../pages/Main'
+import Main from '../pages/Main'
 import native from '../pages/Native/index'
-import detail from '../pages/Native/Detail/Detail'
-import edit from '../pages/Native/Edit/Edit'
+import Detail from '../pages/Native/Detail/Detail'
+import Edit from '../pages/Native/Edit/Edit'
 
 export default [{
   path: '/',
@@ -11,7 +11,7 @@ export default [{
 }, {
   path: '/main',
   // component: () => import('../pages/Main'),
-  component: main,
+  component: Main,
   meta: {
     // isLogin: true,
     title: 'demo-main',
@@ -19,14 +19,17 @@ export default [{
   }
 }, {
   path: '/native',
+  // component: () => import('../pages/Native/index'),
   component: native,
   children: [{
       path: 'detail/:id',
-      component: detail,
+      // component: () => import('../pages/Native/Detail/Detail'),
+      component: Detail,
     },
     {
       path: 'edit',
-      component: edit,
+      // component: () => import('../pages/Native/Edit/Edit'),
+      component: Edit
     }
   ]
 }, 
@@ -34,6 +37,4 @@ export default [{
 //   path: '/project',
 //   component: () => import('../pages/Project')
 // }
-
-
 ]

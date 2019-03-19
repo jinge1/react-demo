@@ -15,6 +15,7 @@ import About from './About'
 import Loading from './Loading'
 import Tip from './Tip'
 import {setLoading, setTip} from '../redux/actions'
+import importComponents from './importComponents'
 
 
 function App(props){
@@ -41,12 +42,18 @@ function App(props){
     })
   }
 
+  const c = importComponents(()=> import('./About'))
+  console.log('c======>')
+  console.log(c ? c.default : c)
+  console.log('c======<')
+
   return (
     <div>
       <ul>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/about">About</Link></li>
       </ul>
+      {c}
       <Loading num={$state.loadingNum}></Loading>
       <Tip msg={$state.tipMsg}></Tip>
       <div>
