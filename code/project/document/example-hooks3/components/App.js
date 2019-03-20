@@ -10,8 +10,8 @@ import {
   Link,
   Route
 } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
+// import Home from './Home'
+// import About from './About'
 import Loading from './Loading'
 import Tip from './Tip'
 import {setLoading, setTip} from '../redux/actions'
@@ -42,10 +42,8 @@ function App(props){
     })
   }
 
-  const c = importComponents(()=> import('./About'))
-  console.log('c======>')
-  console.log(c ? c.default : c)
-  console.log('c======<')
+  const About = importComponents(()=> import('./About'))
+  const Home = importComponents(()=> import('./Home'))
 
   return (
     <div>
@@ -53,7 +51,6 @@ function App(props){
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/about">About</Link></li>
       </ul>
-      {c}
       <Loading num={$state.loadingNum}></Loading>
       <Tip msg={$state.tipMsg}></Tip>
       <div>
@@ -64,8 +61,8 @@ function App(props){
         <button onClick={()=> toPost('hello')}>toPost</button>
       </div>
       <Switch>
-        <Route path='/home' component={Home}/>
-        <Route path='/about' component={About}/>
+        <Route path='/home' component={Home ? Home.default : Home}/>
+        <Route path='/about' component={About ? About.default : About}/>
       </Switch>
     </div>
   )
