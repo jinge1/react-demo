@@ -23,8 +23,6 @@ function App(props){
   const {$state, dispatch, $utils, $post} = store
   const [data, setData] = useState({})
 
-  console.log('store: ')
-
   useEffect(()=>{
     console.log('post: ')
     $post('some/api', {body: 'nothing'}).then(res=>{
@@ -61,8 +59,8 @@ function App(props){
         <button onClick={()=> toPost('hello')}>toPost</button>
       </div>
       <Switch>
-        <Route path='/home' component={Home ? Home.default : Home}/>
-        <Route path='/about' component={About ? About.default : About}/>
+        <Route path='/home' component={Home}/>
+        <Route path='/about' component={About}/>
       </Switch>
     </div>
   )

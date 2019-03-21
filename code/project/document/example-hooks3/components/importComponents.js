@@ -8,10 +8,9 @@ function importComponents(fn){
   useEffect(()=>{
     fn().then(res=> {
       setC(res)
-      // setC(res && res.default ? res.default : res)
     })
   }, [])
-  return c
+  return c ? c.default : null
 }
 
 export default importComponents
